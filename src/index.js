@@ -4,13 +4,14 @@ console.log("hello world");
 
 const reducer = (state = 0, action) => {
     if (action.type === "INC") {
-        return state + 1;
+        return state + action.value;
     }
     return state;
 };
 
 const actionIncrement = {
-    type: "INC"
+    type: "INC",
+    value:1
 };
 
 const store = createStore(reducer);
