@@ -1,10 +1,8 @@
 import {createStore} from "redux";
 import reducer from "./reducer.js";
-import {actionIncrement, actionDecrement, actionRandom} from "./action-creators.js";
+import {actionIncrement, actionDecrement, actionRandom} from "./actions.js";
 
 console.log("hello world");
-
-
 
 const store = createStore(reducer);
 
