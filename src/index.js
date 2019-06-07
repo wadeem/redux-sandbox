@@ -6,12 +6,10 @@ console.log("hello world");
 
 const store = createStore(reducer);
 const {dispatch} = store;
-
 const {increment, decrement, random} = bindActionCreators(actions, dispatch);
 
-
 store.subscribe(() => {
-    console.log(store.getState())
+    console.log(store.getState());
     document.getElementById("counter").innerText = store.getState();
 });
 
