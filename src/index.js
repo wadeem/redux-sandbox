@@ -5,20 +5,34 @@ console.log("hello world");
 const reducer = (state = 0, action) => {
     if (action.type === "INC") {
         return state + action.value;
+    } else if (action.type === "DEC") {
+        return state - action.value;
     }
     return state;
 };
 
 const actionIncrement = {
     type: "INC",
-    value:1
+    value: 1
 };
+
+const actionDecrement = {
+    type: "DEC",
+    value: 1
+}
 
 const store = createStore(reducer);
 
-store.subscribe(()=> console.log(store.getState()));
+store.subscribe(() => {
+    console.log(store.getState())
+    document.getElementById("counter").innerText = store.getState();
+});
 
-store.dispatch(actionIncrement);
-store.dispatch(actionIncrement);
-store.dispatch(actionIncrement);
+document.getElementById("inc").addEventListener("click", () => {
+    store.dispatch(actionIncrement)
+});
+
+document.getElementById("dec").addEventListener("click", () => {
+    store.dispatch(actionDecrement)
+});
 
