@@ -1,18 +1,9 @@
 import {createStore} from "redux";
+import reducer from "./reducer.js";
 import {actionIncrement, actionDecrement, actionRandom} from "./action-creators.js";
 
 console.log("hello world");
 
-const reducer = (state = 0, action) => {
-    if (action.type === "INC") {
-        return state + action.payload;
-    } else if (action.type === "DEC") {
-        return state - action.payload;
-    } else if (action.type === "RND") {
-        return state + action.payload;
-    }
-    return state;
-};
 
 
 const store = createStore(reducer);
