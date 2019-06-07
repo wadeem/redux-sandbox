@@ -13,26 +13,9 @@ const reducer = (state = 0, action) => {
     return state;
 };
 
-const actionIncrement = () => {
-    return {
-        type: "INC",
-        payload: 1
-    }
-};
-
-const actionDecrement = () => {
-    return {
-        type: "DEC",
-        payload: 1
-    }
-};
-
-const actionRandom = (payload) => {
-    return {
-        type: "RND",
-        payload
-    }
-};
+const actionIncrement = () => ({type: "INC", payload: 1});
+const actionDecrement = () => ({type: "DEC", payload: 1});
+const actionRandom = (payload) => ({type: "RND", payload});
 
 const store = createStore(reducer);
 
